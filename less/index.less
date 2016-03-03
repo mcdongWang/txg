@@ -10,7 +10,13 @@ ul{
 *{
     color: #ffffff;
 }
-
+#vm .header .xi{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    width: 100%;
+}
 .header{
     min-width: 1000px;
     .banner{
@@ -35,6 +41,10 @@ ul{
         }
     }
     .nav{
+        position: absolute;
+        top: 95px;
+        width: 100%;
+        z-index: 2;
         background-color: #C0130B;
         height: 48px;
         ul{
@@ -113,6 +123,7 @@ ul{
                 font-weight: bolder;
             }
             .jianli{
+                font-size: 16px;
                 width: 380px;
                 line-height: 23px;
                 padding-top: 20px;
@@ -126,6 +137,7 @@ ul{
     min-width: 1000px;
     margin: 0 auto;
     .slides{
+        margin-top: 48px;
         font-size: 0;
         .slideShow{
             width: 800px;
@@ -184,13 +196,17 @@ ul{
         font-size: 14px;
         vertical-align: top;
         .list{
+
+            background-image: url(../img/connerRT.gif);
+            background-position: 98% 5px;
             border: 1px solid #d1b08e;
             padding: 10px;
             li{
                 .one();
-                padding-top: 5px;
+                margin-top: 5px;
                 line-height: 25px;
                 padding-left: 20px;
+                padding-right: 20px;
             }
         }
     }
@@ -199,4 +215,9 @@ ul{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+footer{
+    background-image: url(../img/footerBg.gif);
+    height: 95px;
+    background-position: center;
 }

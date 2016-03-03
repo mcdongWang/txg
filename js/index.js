@@ -20,7 +20,8 @@ var vm = new Vue({
             text : 'owow3455675643owowoow',
             img : 'img/slide4.jpg'
         }],
-        slideIndex : 0
+        slideIndex : 0,
+        xi : false
     },
     methods: {
         slideChange: function(data){
@@ -37,3 +38,16 @@ var vm = new Vue({
         }, 3000)
     }
 })
+
+window.onscroll=function(){
+    var a = document.body.scrollTop
+    if(vm.xi){
+        if(a <= 95){
+            vm.xi = false
+        }
+    }else{
+        if(a >= 95){
+            vm.xi = true
+        }
+    }
+}
