@@ -2,7 +2,7 @@ var slideInterval
 var vm = new Vue({
     el: '#vm',
     data: {
-        navList: ['网站首页', '中心简介', '招生动态', '教学展示', '童学馆', '国学养生', '联系我们'],
+        navList:['网站首页', '中心简介', '招生动态', '教学展示', '童学馆', '国学养生', '联系我们'],navHref: ['index.html', 'zxjj.html', 'zsdt.html', 'jxzs.html', 'txt.html', 'gxys.html', 'lxwm.html'],
         slideList: [{
             title : 'lalala',
             text : 'owowowoowowowowowowowowowowowowowowowoow',

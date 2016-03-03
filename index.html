@@ -16,7 +16,7 @@
         <div class="nav" :class="xi ? 'xi' : ''">
             <ul>
                 <template v-for="item in navList" >
-                    <a href="">
+                    <a href="{{navHref[$index]}}">
                         <li v-text="item"></li>
                     </a>
                 </template>
