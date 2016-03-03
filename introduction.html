@@ -8,7 +8,24 @@
     <script src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
     <script src="http://cdn.bootcss.com/vue/1.0.16/vue.min.js"></script>
 </head>
-<body>
+<body id="vm">
+    <div class="header">
+        <div class="banner">
+            <div class="content">
+                <img class="logo" src="img/logo.png">
+                <img class="qcode" src="img/qcode.png">
+            </div>
+        </div>
+        <div class="nav" :class="xi ? 'xi' : ''">
+            <ul>
+                <template v-for="item in navList" >
+                    <a href="">
+                        <li v-text="item"></li>
+                    </a>
+                </template>
+            </ul>
+        </div>
+    </div>
     <div class="introduction-content" id="introduction">
         <div class="content-left">
             <h1 class="title">中心简介<span>ABOUT</span></h1>
@@ -88,14 +105,13 @@
                 <img src="img/photo.jpg">
                 <img src="img/photo.jpg">
                 <img src="img/photo.jpg">
-                <img src="img/photo.jpg">
-                <img src="img/photo.jpg">
             </div>
         </div>
     </div>
+    <footer></footer>
 </body>
 <script type="text/javascript">
-var vm = new Vue({
+var vm1 = new Vue({
     el: '#introduction',
     data: {
         tagIndex : 0
@@ -109,5 +125,58 @@ var vm = new Vue({
 
     }
 })
+var slideInterval
+var vm = new Vue({
+    el: '#vm',
+    data: {
+        navList: ['网站首页', '中心简介', '招生动态', '教学展示', '童学馆', '国学养生', '人才招聘'],
+        slideList: [{
+            title : 'lalala',
+            text : 'owowowoowowowowowowowowowowowowowowowoow',
+            img : 'img/slide1.jpg'
+        },{
+            title : 'lalala',
+            text : 'asdfasdf',
+            img : 'img/slide2.jpg'
+        },{
+            title : 'lalala',
+            text : 'oasdbow',
+            img : 'img/slide3.jpg'
+        },{
+            title : 'lalala',
+            text : 'owow3455675643owowoow',
+            img : 'img/slide4.jpg'
+        }],
+        slideIndex : 0,
+        xi : false
+    },
+    methods: {
+        slideChange: function(data){
+            this.slideIndex = data
+            clearInterval(slideInterval)
+            slideInterval = setInterval(function(){
+                vm.slideIndex = (vm.slideIndex + 1) % vm.slideList.length
+            }, 3000)
+        }
+    },
+    ready: function(){
+        slideInterval = setInterval(function(){
+            vm.slideIndex = (vm.slideIndex + 1) % vm.slideList.length
+        }, 3000)
+    }
+})
+
+window.onscroll=function(){
+    var a = document.body.scrollTop
+    if(vm.xi){
+        if(a <= 95){
+            vm.xi = false
+        }
+    }else{
+        if(a >= 95){
+            vm.xi = true
+        }
+    }
+}
 </script>
 </html>
