@@ -1,11 +1,10 @@
 .introduction-content {
-  background-color: #f69;
   font-size: 0;
   width: 1000px;
+  min-width: 1000px;
   margin: 0 auto;
 }
 .introduction-content .content-left {
-  background-color: #ffe;
   font-size: 14px;
   width: 700px;
   display: inline-block;
@@ -104,7 +103,6 @@
 }
 .introduction-content .content-right {
   vertical-align: top;
-  background-color: #fee;
   font-size: 14px;
   width: 270px;
   margin-left: 30px;
@@ -122,6 +120,11 @@
   font-weight: bolder;
 }
 .introduction-content .content-right .jiaoxuezhanshi {
+  padding-top: 20px;
   border: 1px solid #EBD7BC;
   text-align: center;
+}
+.introduction-content .content-right .jiaoxuezhanshi img {
+  width: 230px;
+  padding-bottom: 20px;
 }
